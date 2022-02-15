@@ -1,18 +1,33 @@
 //Logar
 let cadastro = []
 
+let usuario_cadastro = document.getElementById('usuario')
+let email_cadastro = document.getElementById('email')
+let senha_cadastro = document.getElementById('senha')
+
+ let usuario_login = document.getElementById('usuario2')
+ let senha_login = document.getElementById('senha2')
+
+let pesquisarUsers = document.getElementById('pesquisarUsers')
+
+let dadosNome = document.getElementById('dados_nome')
+let dadosEmail = document.getElementById('dados_email')
+let dadosSenha = document.getElementById('dados_senha')
+
+
+
+
 const entrar = function() {
 
-    let usuario = document.getElementById('usuario2')
-    let senha = document.getElementById('senha2')
+  
     console.log(usuario.value);
     console.log(senha.value);
 
-    if(usuario.value !="" && senha.value != ""){
+    if(usuario_login.value !="" && senha_login.value != ""){
         let users = []
         if(localStorage.getItem('cadastro') != null)
         users = JSON.parse(localStorage.getItem('cadastro'))
-         if(users.find(users => users.usuario == usuario.value && users.senha == senha.value)){
+         if(users.find(users => users.usuario == usuario_login.value && users.senha == senha_login.value)){
 
              let pagina = setTimeout(function(){
                  window.location = "index.html"
@@ -28,26 +43,88 @@ const entrar = function() {
 //Cadastrar
 
 const add = function () {
-    window.location = "entrar.html"
 
-    let usuario = document.getElementById('usuario')
-    let email = document.getElementById('email')
-    let senha = document.getElementById('senha')
+    
+
+
     if (localStorage.getItem('cadastro') != null)
         cadastro = JSON.parse(localStorage.getItem('cadastro'))
+     if(usuario_cadastro.value != "" && senha_cadastro.value != "" && email_cadastro.value != ""){
+
+        if(usuario_cadastro.value.length >= 4){
+          
+            if(senha_cadastro.value.length >=6){
+          
+
+            cadastro.push({
+                usuario: usuario_cadastro.value,
+                email: email_cadastro.value,
+                senha: senha_cadastro.value,
+        
+            })
+            console.log(cadastro)
+            localStorage.setItem("cadastro", JSON.stringify(cadastro))
+            usuario_cadastro.value = ""
+            email_cadastro.value = ""
+            senha_cadastro.value= ""
+            window.location = "entrar.html"
+
+            }else{
+                alert('senha com no minimo 6 caracteris')
+            }
+            }else{
+                alert('usuario precisa de no menimo 3 caracteris')
+            }
+  
 
 
-    cadastro.push({
-        usuario: usuario.value,
-        email: email.value,
-        senha: senha.value,
 
-    })
-    console.log(cadastro)
-    localStorage.setItem("cadastro", JSON.stringify(cadastro))
-    usuario.value = ""
-    email.value = ""
-    senha.value= ""
+     }else{alert('preencha todos os campos')}
+       
+   
+
+}
+
+// Area de Admin
+
+function pesquisar () {
+
+
+  cadastro = JSON.parse(localStorage.getItem('cadastro'))
+
+   for (let i = 0; i < cadastro.length; i++) {
+      
+       if(pesquisarUsers.value == cadastro[i].usuario){
+
+
+        
+dadosNome.value = cadastro[i].usuario
+dadosEmail.value = cadastro[i].email
+dadosSenha.value = cadastro[i].senha
+
+       }
+
+   }
+}
+
+//excluir usuario
+
+function delhist(){
+
+cadastro = JSON.parse(localStorage.getItem('cadastro'))
+let excluirUsers 
+for(i = 0 ; i < cadastro.length; i++ ){
+
+if(dadosNome.value == cadastro[i].usuario){
+    excluirUsers = i
+    cadastro.splice(excluirUsers, 1)
+    
+    alert('usuario excluido')
+
+    localStorage.setItem('cadastro', JSON.stringify(cadastro))
+}
+
+}
 
 }
 // Ver Senhna
@@ -60,11 +137,3 @@ const add = function () {
 //     } else {
 //         senha.setAttribute('type', 'password');
 //     }})
-
-// Area de Admin
-
-const pesquisar = function () {
-
-   document.getElementById("nome").value = localStorage.usuario
-   
-}
