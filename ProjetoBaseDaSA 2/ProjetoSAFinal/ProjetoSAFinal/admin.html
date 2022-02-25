@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health History</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <div class="admin">
+        <a class="A" href="index.html">Pagina Inicial</a>
+        <h1>Area de administração</h1>
+        <form>
+            <input type="text" name="Pesquisar" id="pesquisarUsers" placeholder="Pesquisar nome de usuário">
+            <button type="button" onclick="pesquisar()">Pesquisar</button>
+            <!-- <p>Histórico</p>
+                <textarea name="Histórico" id="hist" readonly></textarea> -->
+            <p>Dados do usuário</p><br>
+            <br>
+            <label for=""> nome do usuario</label>
+            <input type="text" id="dados_nome" >
+
+            <label for="">email do usuario</label>
+            <input type="email" id="dados_email" >
+
+            <label for="">senha do usuario</label>
+            <input type="number" id="dados_senha" >
+
+
+            <button onclick="delhist()">Deletar Histórico</button>
+            <button onclick="UpDados()">Editar Histórico</button>
+            <br><br>
+            <label for="">se quiser mudar os dados preencher os quadros de cima e clique em Editar Histórico</label>
+        </form>
+    </div>
+    <script src="js/localStorage.js"></script>
+</body>
+
+</html>
