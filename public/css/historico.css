@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url(Raleway-ExtraLight.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    margin: 0;
+    background: linear-gradient(45deg, #2E66D2, #5580D3,#97B9FA,#537ac9);
+    background-size: 300% 300%;
+    animation: colors 10s ease infinite;
+    font-family: Raleway;
+}
+a{
+    text-decoration: none;
+    font-size: 50px;
+    line-height: 20px;
+    color: #ffffff;
+    transition: 0.2s;
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    
+}
+
+.historico{
+    width: 900px;
+    height: 540px;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.63);
+    left: 50%;
+    margin-top: 40px;
+    position: relative;
+    transform: translate(-50%, 5%);
+    box-sizing: border-box;
+    padding: 68px 28px;
+    font-family: Raleway;
+}
+.escolha{
+    width: 20%;
+    height: 50px;
+    margin-top: -19px;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 40%;
+    font-family: Raleway;
+}
+.escolha:hover{
+    cursor: pointer;
+    background: #4676d6;
+    transition: 1s;
+}
+.historico input{
+    margin-left: 50%;
+    margin-top: -52px;
+    width: 300px;
+    display: flex;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: Raleway;
+}
+#medicao{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+    text-align: center;
+}
+
+#dataMed{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+    text-align: center;
+}
+#eat{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+    text-align: center;
+}
+.historico p{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.historico button{
+    width: 25%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family: Raleway;
+    transition: 1s;
+    font-size: 20px;
+}
+.historico button:hover{
+    cursor: pointer;
+    background: #4676d6;
+    transition: 1s;
+}
